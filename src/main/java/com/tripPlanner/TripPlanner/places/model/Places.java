@@ -55,6 +55,7 @@ public class Places {
     public void setAbout(String about) {
         this.about = about;
     }
+
 //    public Places(int id, int locationId, String placeName, String image) {
 //        super();
 //        this.id = id;
