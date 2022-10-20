@@ -1,5 +1,6 @@
 package com.tripPlanner.TripPlanner.state;
 
+import com.tripPlanner.TripPlanner.exceptions.StateAlreadyExistedException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,7 +18,7 @@ public class StateController {
     }
 
     @PostMapping("/newState")
-    public String setStates(@RequestBody State state){
+    public String setStates(@RequestBody State state) throws StateAlreadyExistedException {
         return stateService.saveState(state);
     }
 }

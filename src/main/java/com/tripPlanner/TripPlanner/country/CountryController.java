@@ -1,5 +1,6 @@
 package com.tripPlanner.TripPlanner.country;
 
+import com.tripPlanner.TripPlanner.exceptions.CountryAlreadyExistedException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,7 +18,7 @@ public class CountryController {
     }
 
     @PostMapping("/newCountry")
-    public String setCountry(@RequestBody Country country) {
+    public String setCountry(@RequestBody Country country) throws CountryAlreadyExistedException {
         return countryService.saveCountry(country);
     }
 

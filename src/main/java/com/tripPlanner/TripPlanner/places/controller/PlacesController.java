@@ -1,5 +1,6 @@
 package com.tripPlanner.TripPlanner.places.controller;
 
+import com.tripPlanner.TripPlanner.exceptions.PlaceAlreadyExistedException;
 import com.tripPlanner.TripPlanner.places.model.Places;
 import com.tripPlanner.TripPlanner.places.repository.PlacesRepository;
 import com.tripPlanner.TripPlanner.places.service.PlacesService;
@@ -18,15 +19,13 @@ public class PlacesController {
     PlacesRepository placesRepository;
 
     @GetMapping("/locationId/{id}/places")
-    @ResponseStatus(code = HttpStatus.OK)
     public List<Places> fetchAllPlaces(@PathVariable int id){
         return placesService.getPlacesList(id);
         //return placesRepository.findAll();
     }
 
     @PostMapping("/newPlace")
-    @ResponseStatus(code = HttpStatus.ACCEPTED)
-    public String saveNewPlace(@RequestBody Places place){
+    public String saveNewPlace(@RequestBody Places place) throws PlaceAlreadyExistedException {
         return placesService.savePlaces(place);
     }
 }

@@ -1,5 +1,6 @@
 package com.tripPlanner.TripPlanner.locations.controller;
 
+import com.tripPlanner.TripPlanner.exceptions.LocationAlreadyExistedException;
 import com.tripPlanner.TripPlanner.locations.model.Locations;
 import com.tripPlanner.TripPlanner.locations.service.LocationsService;
 import com.tripPlanner.TripPlanner.locations.service.LocationsServiceImp;
@@ -16,14 +17,12 @@ public class LocationsController {
     LocationsServiceImp locationsService;
 
     @GetMapping("/locations")
-    @ResponseStatus(code = HttpStatus.OK)
     public List<Locations> fetchAllPlaces(){
         return locationsService.getLocationsList();
     }
 
     @PostMapping("/newLocation")
-    @ResponseStatus(code = HttpStatus.CREATED)
-    public String saveNewPlace(@RequestBody Locations location){
+    public String saveNewPlace(@RequestBody Locations location) throws LocationAlreadyExistedException {
         return locationsService.saveLocation(location);
     }
 }

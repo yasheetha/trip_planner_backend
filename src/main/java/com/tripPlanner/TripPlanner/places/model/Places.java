@@ -56,17 +56,4 @@ public class Places {
         this.about = about;
     }
 
-//    public Places(int id, int locationId, String placeName, String image) {
-//        super();
-//        this.id = id;
-//        this.locations = new Locations(locationId,"","");
-//        this.placeName = placeName;
-//        this.image = image;
-//    }
-//    public Places(Places place){
-//        this.id = place.id;
-//        this.locations = place.locations;
-//        this.placeName = place.placeName;
-//        this.image = place.image;
-//    }
 }
