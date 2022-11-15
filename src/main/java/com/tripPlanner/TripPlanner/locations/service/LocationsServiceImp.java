@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class LocationsServiceImp implements LocationsService {
@@ -32,7 +33,19 @@ public class LocationsServiceImp implements LocationsService {
         return "location saved successfully";
     }
 
+    @Override
+    public List<String> getLocationNames() {
+        return locationsRepository.findCity();
+    }
+
+    @Override
+    public int getLocationId(String locationName) {
+        return locationsRepository.findIdByCity(locationName);
+    }
+
     private boolean isAlreadyExisted(Locations location) {
         return locationsRepository.findByCity(location.getCity()).orElse(null) != null;
     }
+
+
 }

@@ -1,0 +1,8 @@
+fileignoreconfig:
+- filename: src/main/java/com/tripPlanner/TripPlanner/customers/SignupRequest.java
+  checksum: bb8e7b62d1e366dba90a6e9cd72f9583853bda583138c7306435e8abb00b9422
+- filename: src/main/java/com/tripPlanner/TripPlanner/customers/UserController.java
+  checksum: cb54b29b483f7281bef4d1f4b3ff229612e49743e2c87912c9bd3286d6ed506f
+- filename: src/main/java/com/tripPlanner/TripPlanner/user/User.java
+  checksum: 993bf28a5bcce9eb44485021ea0f35ebd1443654e652168dd24b892dbeaf0c4e
+version: ""

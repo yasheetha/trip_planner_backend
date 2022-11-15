@@ -25,4 +25,9 @@ public class LocationsController {
     public String saveNewPlace(@RequestBody Locations location) throws LocationAlreadyExistedException {
         return locationsService.saveLocation(location);
     }
+
+    @GetMapping("/locationNames")
+    public List<String> fetchLocationNames(){
+        return locationsService.getLocationNames();
+    }
 }

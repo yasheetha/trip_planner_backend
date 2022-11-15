@@ -18,8 +18,8 @@ public class PlacesController {
     @Autowired
     PlacesRepository placesRepository;
 
-    @GetMapping("/locationId/{id}/places")
-    public List<Places> fetchAllPlaces(@PathVariable int id){
+    @GetMapping("/places/{id}")
+    public List<Places> fetchAllPlaces(@PathVariable String id){
         return placesService.getPlacesList(id);
         //return placesRepository.findAll();
     }
